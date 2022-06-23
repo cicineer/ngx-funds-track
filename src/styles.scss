@@ -1,1 +1,63 @@
 /* You can add global styles to this file, and also import other style files */
+* {
+ margin: 0;
+ padding: 0; 
+ font-size: 16px;
+}
+.button {
+    background-color: cadetblue;
+    border: none;
+    border-radius: 1em;
+    color: white;
+    padding: .5em;
+    cursor: pointer;
+}
+.secondary-button  {
+    background-color: gray;
+}
+.button-danger {
+    background-color: darkred;
+}
+
+.input-container {
+    display: flex;
+    flex-direction: column;
+    label {
+        font-weight: bold;
+    }
+    input {
+        border-radius: .5em;
+        border: 1px solid black;
+        height: 2em;
+        padding-left: 1em;
+    }
+}
+.d-flex-btw {
+    display: flex;
+    justify-content: space-between;
+}
+.mg-top-sm {
+    margin-top: .5em;
+}
+.card {
+    width: 30%;
+    border-radius: .5em;
+    background-color: lightgray;
+    display: flex;
+    flex-direction: column;
+    padding: .5em;
+    .header {
+        font-size: 1.1em;
+        border-bottom: 1px solid black;
+    }
+    .content {
+        .data {
+            display: flex;
+            justify-content: space-between;
+        }
+    }
+    .footer {
+        display: flex;
+        justify-content: space-between;
+    }
+}

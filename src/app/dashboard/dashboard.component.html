@@ -1,0 +1,41 @@
+<div>
+    <button class="button" (click)="showForm = true">Create New</button>
+</div>
+<div *ngIf="!showForm">
+    <div *ngFor="let fund of funds" class="card">
+        <div class="header">{{ fund.name }}</div>
+        <div class="content mg-top-sm">
+            <div class="data">
+                <span>value</span>
+                <span>{{ fund.netValue }}</span>
+            </div>
+            <div class="data">
+                <span>code</span>
+                <span>{{ fund.code }}</span>
+            </div>
+        </div>
+        <div class="footer mg-top-sm">
+            <button class="button button-danger" (click)="deleteFund(fund)">Delete</button>
+            <button class="button">Change Net Value</button>
+        </div>
+    </div>
+</div>
+
+<div *ngIf="showForm">
+    <div class="input-container">
+        <label>Name</label>
+        <input type="text" #name>
+    </div>
+    <div class="input-container">
+        <label>Current value</label>
+        <input type="number" #net>
+    </div>
+    <div class="input-container">
+        <label>Code</label>
+        <input type="text" #code>
+    </div>
+    <div class="d-flex-btw mg-top-sm">
+        <button class="button secondary-button" (click)="showForm = false">Cancel</button>
+        <button class="button" (click)="createFund(name.value, net.value, code.value)">Confirm</button>
+    </div>
+</div>
